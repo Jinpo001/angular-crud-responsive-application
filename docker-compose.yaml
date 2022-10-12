@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports: 
+      - "4200:4200"
+    volumes:
+      - /angular10-crud-responsive-application/node_modules
+      - .:/angular10-crud-responsive-application
+  
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /angular10-crud-responsive-application/node_modules
+      - .:/angular10-crud-responsive-application
+    command: ["npm", "run", "test"]

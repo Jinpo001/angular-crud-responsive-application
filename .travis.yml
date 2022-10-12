@@ -1,0 +1,25 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t guojinpo/angular10-crud-responsive-application -f Dockerfile.travis .
+
+script:
+  - docker run  guojinpo/angular10-crud-responsive-application npm run build:prod
+  - docker run  guojinpo/angular10-crud-responsive-application npm run test -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadlessCI
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "angular10-crud-responsive-application"
+  env: "angular10-crud-responsive-application"
+  bucket_name: "elasticbeanstalk-us-east-1-414651766932"
+  bucket_path: "angular10-crud-responsive-application"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
