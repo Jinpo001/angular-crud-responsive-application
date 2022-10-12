@@ -1,0 +1,14 @@
+<div class="form-group" [formGroup]="formGroup">
+    <label for="exampleFormControlInput1" [attr.for]="component.key">{{component.label}}</label>
+
+    <input *ngIf="component.type !== 'textarea'"  [formControlName]="component.key" [id]="component.key"
+        [type]="component.type" class="form-control" [placeholder]="component.placeholder"
+        [readOnly]="component.readonly">
+
+
+    <textarea *ngIf="component.type ==='textarea'" class="form-control"  [formControlName]="component.key"
+        [id]="component.key" rows="3" [readOnly]="component.readonly"></textarea>
+    <div class="alert alert-warning" role="alert" *ngIf="isValid">
+       {{component.label.substring(0,component.label.length-1)}} is required !
+    </div>
+</div>

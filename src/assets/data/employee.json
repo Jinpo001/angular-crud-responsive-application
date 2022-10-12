@@ -1,0 +1,35 @@
+[
+    {
+        "employeeID": "employee01",
+        "fullName": "Barry",
+        "address":"Address01",
+        "sex":"male",
+        "cardNumber": "cardNumber",
+        "homePhone": "phone",
+        "email": "email",
+        "briefIntroduction":"Some quick example text to build on the employee and make up the bulk of the employee's content.",
+        "active": true
+    },
+    {
+        "employeeID": "employee02",
+        "fullName": "Jinpo",
+        "sex":"female",
+        "address":"Address01",
+        "cardNumber": "cardNumber",
+        "homePhone": "phone",
+        "email": "email",
+        "briefIntroduction":"Some quick example text to build on the employee.",
+        "active": true
+    },
+    {
+        "employeeID": "employee03",
+        "fullName": "Jinpo.guo",
+        "sex":"male",
+        "address":"Address01",
+        "cardNumber": "cardNumber",
+        "homePhone": "phone",
+        "email": "email",
+        "briefIntroduction":"Some quick example text to build on the employee and make up the bulk of the employee's content.",
+        "active": true
+    }
+]

@@ -1,0 +1,10 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+
+    <ng-container *ngFor="let componentObj of dynamicComponents" [appDynamicComponent]="componentObj"
+      [formGroup]="formGroup" class="form-row">
+    </ng-container>
+    <button type="submit" class="btn btn-primary dynamic-form-submit" *ngIf="isShow" [disabled]="!formGroup.valid">Submit</button>
+  </form>
+
+</div>

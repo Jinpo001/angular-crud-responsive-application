@@ -1,0 +1,50 @@
+<div class="row employee-list">
+    <div class="card" *ngFor="let employee of employees">
+
+        <img src="../../../assets/images/trash-2.svg" alt="" width="32" height="32" title="Delete Employee"
+            class="delete-employee" (click)="showModal(employee.employeeID)">
+        <img src="../../../assets/images/people.png" class="card-img-top" [title]="employee.fullName">
+        <div class="card-body">
+            <h5 class="card-title">{{employee.fullName}}<em>&nbsp;|&nbsp;{{employee.sex}}</em></h5>
+            <p class="card-title-p">Email:&nbsp;&nbsp;{{employee.email}}</p>
+            <p class="card-title-p">Address:&nbsp;&nbsp;{{employee.address}}</p>
+            <!-- <p class="card-text">{{employee.briefIntroduction}}</p> -->
+            <div class="car-add-employee-div"> <a [routerLink]="['update/',[employee.employeeID,'Edit']]"
+                    class="btn btn-primary employee-button">Edit</a>
+                <a [routerLink]="['update/',[employee.employeeID,'View']]"
+                    class="btn btn-primary employee-button">View</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="card card-add">
+        <img src="../../../assets/images/plus-circle.svg" [routerLink]="['update/',['','Create']]" alt="Add Employee" width="80"
+            height="80" title="Add Employee" class="card-add-img">
+        <!-- <h5 class="card-title card-add-employee-font">Add Employee </h5> -->
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="triggerShowModal" style="display: none;" data-toggle="modal" data-target="#exampleModal">
+</button>
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Confirmation </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{modalMessage}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="delete()">Certain</button>
+            </div>
+        </div>
+    </div>
+</div>

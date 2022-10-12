@@ -1,0 +1,13 @@
+<div class="col-6 update-employee-container">
+
+    <div class="employee-update-header">{{viewModel}} Employee
+        <button type="button" class="close" aria-label="close" [routerLink]="['/employees']">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <br>
+    <app-dynamic-form *ngIf="dynamicComponents" [dynamicComponents]="dynamicComponents" [isShow]="isShow"
+        (saveData)="saveData($event)">
+    </app-dynamic-form>
+
+</div>
