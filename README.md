@@ -1,4 +1,4 @@
-#  angular10-crud-responsive-application
+#  angular-crud-responsive-application
 - author: Jinpo
 - welcome to the application ~~
 
